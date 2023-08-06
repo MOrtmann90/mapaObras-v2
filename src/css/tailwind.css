@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+.card-container {
+  @apply flex flex-col px-1 text-center ;
+}
+
+  .counter {
+    @apply my-1 text-xl font-bold text-center text-amber-100;
+  }
+
+  .icon {
+    @apply text-3xl text-slate-50;
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Obras | Municipio de Tandil</title>
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="main.css" />
+    <!--POPPINS FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--FONT AWESOME-->
+    <script
+      src="https://kit.fontawesome.com/e1d1f4094f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ALPINE JS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <header></header>
+    <section
+      id="hero"
+      class="bg-fixed bg-[url('img/bg.jpg')] h-[95dvh] bg-cover bg-no-repeat flex flex-col bg-center gap-4 p-4 relative select-none"
+    >
+      <img src="img/logoMunicipioBlanco.gif" alt="" class="w-40 mx-auto mt-2 " />
+
+      <div class="flex flex-col justify-center text-center h-2/5 text-slate-50">
+        <h1 class="text-4xl font-bold uppercase text-amber-100">Mapa de obras</h1>
+        <p class="p-3 text-2xl font-light">
+          Conocé acá también como Tandil crece
+        </p>
+      </div>
+
+      <div
+        class="absolute inset-x-0 grid grid-cols-2 gap-4 p-2 pb-4 mx-4 rounded-md -bottom-4 bg-cyan-800/50"
+      >
+        <!-- Card 1 -->
+        <div class="card-container">
+          <i class="fa-solid fa-leaf icon"></i>
+          <div class="flex justify-center">
+            <p class="my-auto font-bold leading-none text-slate-50">+</p>
+            <div
+              class="counter"
+              x-data="animatedCounter(3380000, 200)"
+              x-init="updatecounter"
+              x-text="Math.round(current)"
+            ></div>
+          </div>
+          <p class="text-slate-50 font-extralight">
+            metros cuadrados en espacios públicos
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-container">
+          <i class="fa-solid fa-helmet-safety icon"></i>
+          <div class="flex justify-center">
+            <p class="my-auto font-bold leading-none text-slate-50">+</p>
+            <div
+              class="counter"
+              x-data="animatedCounter(60000, 200)"
+              x-init="updatecounter"
+              x-text="Math.round(current)"
+            ></div>
+          </div>
+          <p class="text-slate-50">
+            beneficiados con obras de servicios
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-container">
+          <i class="fa-solid fa-bus-simple icon"></i>
+          <div class="flex justify-center">
+            <p class="my-auto font-bold leading-none text-slate-50">+</p>
+            <div
+              class="counter"
+              x-data="animatedCounter(156800, 200)"
+              x-init="updatecounter"
+              x-text="Math.round(current)"
+            ></div>
+          </div>
+          <p class="text-slate-50">
+            metros recorridos por el transporte público de pasajeros
+          </p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card-container">
+          <i class="fa-solid fa-house-medical icon"></i>
+          <div class="flex justify-center">
+            <p class="my-auto font-bold leading-none text-slate-50">+</p>
+            <div
+              class="counter"
+              x-data="animatedCounter(50000, 200)"
+              x-init="updatecounter"
+              x-text="Math.round(current)"
+            ></div>
+          </div>
+          <p class="text-slate-50">
+            asistencias en el Servicio Integrado de Salud Pública
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="controls" class=""></section>
+    <section class="h-screen bg-neutral-100"><div id="map"></div></section>
+    <footer class="w-full p-4 text-center bg-gray-800 text-slate-50"><p>&copy; 2022 Municipio de Tandil | Todos los derechos reservados.</p></footer>
+    <!-- COUNTER ANIMATION -->
+    <script>
+      function animatedCounter(targer, time = 200, start = 0) {
+        return {
+          current: 0,
+          target: targer,
+          time: time,
+          start: start,
+          updatecounter: function () {
+            start = this.start;
+            const increment = (this.target - start) / this.time;
+            const handle = setInterval(() => {
+              if (this.current < this.target) this.current += increment;
+              else {
+                clearInterval(handle);
+                this.current = this.target;
+              }
+            }, 1);
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
