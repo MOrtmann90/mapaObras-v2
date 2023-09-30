@@ -4,7 +4,7 @@
 
 @layer components {
 .card-container {
-  @apply flex flex-col px-1 text-center ;
+  @apply flex flex-col px-1 text-center backdrop-filter-none backdrop-blur-none;
 }
 
   .counter {

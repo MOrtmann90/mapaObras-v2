@@ -20,6 +20,10 @@
     ></script>
     <!-- ALPINE JS -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- LEAFLET -->
+    <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
+    <script src="../node_modules/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="map.css" />
   </head>
   <body>
     <header></header>
@@ -27,17 +31,19 @@
       id="hero"
       class="bg-fixed bg-[url('img/bg.jpg')] h-[95dvh] bg-cover bg-no-repeat flex flex-col bg-center gap-4 p-4 relative select-none"
     >
-      <img src="img/logoMunicipioBlanco.gif" alt="" class="w-40 mx-auto mt-2 " />
+      <img src="img/logoMunicipioBlanco.gif" alt="" class="w-40 mx-auto mt-2" />
 
       <div class="flex flex-col justify-center text-center h-2/5 text-slate-50">
-        <h1 class="text-4xl font-bold uppercase text-amber-100">Mapa de obras</h1>
+        <h1 class="text-4xl font-bold uppercase text-amber-100">
+          Mapa de obras
+        </h1>
         <p class="p-3 text-2xl font-light">
           Conocé acá también como Tandil crece
         </p>
       </div>
 
       <div
-        class="absolute inset-x-0 grid grid-cols-2 gap-4 p-2 pb-4 mx-4 rounded-md -bottom-4 bg-cyan-800/50"
+        class="absolute inset-x-0 grid grid-cols-2 gap-4 p-2 pb-4 mx-4 border rounded-md border-cyan-800/20 -bottom-4 bg-cyan-800/20 backdrop-blur-sm bg-opacity-10 bg-clip-padding"
       >
         <!-- Card 1 -->
         <div class="card-container">
@@ -67,9 +73,7 @@
               x-text="Math.round(current)"
             ></div>
           </div>
-          <p class="text-slate-50">
-            beneficiados con obras de servicios
-          </p>
+          <p class="text-slate-50">beneficiados con obras de servicios</p>
         </div>
         <!-- Card 3 -->
         <div class="card-container">
@@ -106,8 +110,13 @@
       </div>
     </section>
     <section id="controls" class=""></section>
-    <section class="h-screen bg-neutral-100"><div id="map"></div></section>
-    <footer class="w-full p-4 text-center bg-gray-800 text-slate-50"><p>&copy; 2022 Municipio de Tandil | Todos los derechos reservados.</p></footer>
+    <section class="flex h-screen p-3 my-6 bg-neutral-100">
+      <sidebar id="sidebar" class="w-2/6 p-3 mr-3 border-2"></sidebar>
+      <div id="map" class="w-4/6 border-2 border-neutral-400"></div>
+    </section>
+    <footer class="w-full p-4 text-center bg-neutral-800 text-slate-50">
+      <p>&copy; 2022 Municipio de Tandil | Todos los derechos reservados.</p>
+    </footer>
     <!-- COUNTER ANIMATION -->
     <script>
       function animatedCounter(targer, time = 200, start = 0) {
@@ -126,9 +135,13 @@
                 this.current = this.target;
               }
             }, 1);
-          },
+          }
         };
       }
     </script>
+    <!-- DATA -->
+    <script src="../data/puntos_obras.js"></script>
+    <!-- MAP SCRIPT -->
+    <script src="map.js"></script>
   </body>
 </html>
