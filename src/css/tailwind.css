@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-.card-container {
-  @apply flex flex-col px-1 text-center backdrop-filter-none backdrop-blur-none;
-}
+  .card-container {
+    @apply flex flex-col px-1 text-center backdrop-filter-none backdrop-blur-none;
+  }
 
   .counter {
     @apply my-1 text-xl font-bold text-center text-amber-100;
@@ -14,4 +14,5 @@
   .icon {
     @apply text-3xl text-slate-50;
   }
+
 }

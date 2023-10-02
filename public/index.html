@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="map.css" />
+    <!-- LEAFLET-SIDEBAR -->
+    <link
+      rel="stylesheet"
+      href="../src/js/leaflet-sidebar-master/src/L.Control.Sidebar.css"
+    />
   </head>
   <body>
     <header></header>
@@ -109,39 +114,36 @@
         </div>
       </div>
     </section>
-    <section id="controls" class=""></section>
-    <section class="flex h-screen p-3 my-6 bg-neutral-100">
-      <sidebar id="sidebar" class="w-2/6 p-3 mr-3 border-2"></sidebar>
-      <div id="map" class="w-4/6 border-2 border-neutral-400"></div>
+    <!-- CONTROLS -->
+    <section id="controls" class="">
+      <span></span><span></span><span></span><span></span><span></span>
     </section>
+    <!-- SIDEBAR / MAP -->
+    <section class="flex p-3 my-6 bg-neutral-100">
+      <!-- sidebar -->
+      <div id="sidebar">
+        <p>Tocá los puntos para conocer más de cada una de las obras que se realizan en nuestra ciudad</p>
+      </div>
+      <!-- map -->
+      <div
+        id="map"
+        class="w-full px-2 h-[600px] border-2 rounded-md border-neutral-400"
+      ></div>
+    </section>
+    <!-- FOOTER -->
     <footer class="w-full p-4 text-center bg-neutral-800 text-slate-50">
-      <p>&copy; 2022 Municipio de Tandil | Todos los derechos reservados.</p>
+      <p>&copy; 2022 Municipio de Tandil | Área de Geotecnologías. Todos los derechos reservados.</p>
     </footer>
+
+    
     <!-- COUNTER ANIMATION -->
-    <script>
-      function animatedCounter(targer, time = 200, start = 0) {
-        return {
-          current: 0,
-          target: targer,
-          time: time,
-          start: start,
-          updatecounter: function () {
-            start = this.start;
-            const increment = (this.target - start) / this.time;
-            const handle = setInterval(() => {
-              if (this.current < this.target) this.current += increment;
-              else {
-                clearInterval(handle);
-                this.current = this.target;
-              }
-            }, 1);
-          }
-        };
-      }
-    </script>
+    <script src="counterAnimation.js"></script>
     <!-- DATA -->
     <script src="../data/puntos_obras.js"></script>
     <!-- MAP SCRIPT -->
     <script src="map.js"></script>
+    <!-- SIDEBAR SCRIPT -->
+    <script src="../src/js/leaflet-sidebar-master/src/L.Control.Sidebar.js"></script>
+    <script src="sidebar.js"></script>
   </body>
 </html>
