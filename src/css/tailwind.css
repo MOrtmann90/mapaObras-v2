@@ -15,4 +15,7 @@
     @apply text-3xl text-slate-50;
   }
 
+  .control-card {
+    @apply gap-4 p-2 ml-2 border rounded-md bg-neutral-500 border-neutral-500;
+  }
 }

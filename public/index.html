@@ -23,11 +23,11 @@
     <!-- LEAFLET -->
     <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="map.css" />
+
     <!-- LEAFLET-SIDEBAR -->
     <link
       rel="stylesheet"
-      href="../src/js/leaflet-sidebar-master/src/L.Control.Sidebar.css"
+      href="js/leaflet-sidebar-master/src/L.Control.Sidebar.css"
     />
   </head>
   <body>
@@ -38,7 +38,9 @@
     >
       <img src="img/logoMunicipioBlanco.gif" alt="" class="w-40 mx-auto mt-2" />
 
-      <div class="flex flex-col justify-center text-center h-2/5 text-slate-50">
+      <div
+        class="container flex flex-col justify-center mx-auto text-center h-2/5 text-slate-50"
+      >
         <h1 class="text-4xl font-bold uppercase text-amber-100">
           Mapa de obras
         </h1>
@@ -48,7 +50,7 @@
       </div>
 
       <div
-        class="absolute inset-x-0 grid grid-cols-2 gap-4 p-2 pb-4 mx-4 border rounded-md border-cyan-800/20 -bottom-4 bg-cyan-800/20 backdrop-blur-sm bg-opacity-10 bg-clip-padding"
+        class="container absolute inset-x-0 grid grid-cols-2 gap-4 p-2 pb-4 mx-auto border rounded-md border-cyan-800/20 -bottom-4 bg-cyan-800/20 backdrop-blur-sm bg-opacity-10 bg-clip-padding"
       >
         <!-- Card 1 -->
         <div class="card-container">
@@ -119,31 +121,73 @@
       <span></span><span></span><span></span><span></span><span></span>
     </section>
     <!-- SIDEBAR / MAP -->
-    <section class="flex p-3 my-6 bg-neutral-100">
-      <!-- sidebar -->
-      <div id="sidebar">
-        <p>Tocá los puntos para conocer más de cada una de las obras que se realizan en nuestra ciudad</p>
+    <section class="flex p-3 mt-6 bg-neutral-100">
+      <div class="w-full">
+        <!-- sidebar -->
+        <div id="sidebar">
+          <!-- <p>
+            Tocá los puntos para conocer más de cada una de las obras que se
+            realizan en nuestra ciudad
+          </p> -->
+        </div>
+        <!-- map -->
+        <div
+          id="map"
+          class="w-full px-2 h-[600px] border-2 rounded-md border-neutral-400"
+        ></div>
       </div>
-      <!-- map -->
+      <!-- references -->
       <div
-        id="map"
-        class="w-full px-2 h-[600px] border-2 rounded-md border-neutral-400"
-      ></div>
+        class="items-stretch hidden grid-cols-1 text-white min-w-fit lg:grid"
+      >
+        <button class="control-card bg-[#f64740]">
+          <i class="mr-2 text-2xl fa-regular fa-hospital"></i>Salud y bienestar
+          <div>18</div>
+        </button>
+        <button class="control-card bg-[#fdca3f] text-[#262626]">
+          <i class="mr-2 text-2xl fa-solid fa-person-digging"></i
+          >Infraestructura
+          <div>18</div>
+        </button>
+        <button class="control-card bg-[#80be39]">
+          <i class="mr-2 text-2xl fa-solid fa-recycle"></i>Ambiente
+          <div>18</div>
+        </button>
+        <button class="control-card bg-[#7fb8db] text-[#262626]">
+          <i class="mr-2 text-2xl fa-solid fa-book-open-reader"></i>Educación
+          <div>18</div>
+        </button>
+        <button class="control-card bg-[#384c5b]">
+          <i class="mr-2 text-2xl fa-solid fa-user-shield"></i>Seguridad
+          <div>18</div>
+        </button>
+        <button class="control-card bg-[#a3333d]">
+          <i class="mr-2 text-2xl fa-solid fa-masks-theater"></i>Cultura
+          <div>18</div>
+        </button>
+      </div>
     </section>
     <!-- FOOTER -->
     <footer class="w-full p-4 text-center bg-neutral-800 text-slate-50">
-      <p>&copy; 2022 Municipio de Tandil | Área de Geotecnologías. Todos los derechos reservados.</p>
+      <div class="mb-3 text-neutral-500">
+        <i class="fa-solid fa-circle-info"></i> Este mapa se encuentra en
+        constante edición
+      </div>
+      <p>
+        &copy; 2023 Municipio de Tandil | Área de Geotecnologías. Todos los
+        derechos reservados.
+      </p>
     </footer>
 
-    
     <!-- COUNTER ANIMATION -->
-    <script src="counterAnimation.js"></script>
+    <script src="js/counterAnimation.js"></script>
     <!-- DATA -->
     <script src="../data/puntos_obras.js"></script>
+    <script src="../data/lineas_obras.js"></script>
     <!-- MAP SCRIPT -->
-    <script src="map.js"></script>
+    <script src="js/map.js"></script>
     <!-- SIDEBAR SCRIPT -->
-    <script src="../src/js/leaflet-sidebar-master/src/L.Control.Sidebar.js"></script>
-    <script src="sidebar.js"></script>
+    <script src="js/leaflet-sidebar-master/src/L.Control.Sidebar.js"></script>
+    <script src="js/sidebar.js"></script>
   </body>
 </html>

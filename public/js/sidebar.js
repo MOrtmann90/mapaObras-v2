@@ -4,6 +4,8 @@ var sidebar = L.control.sidebar("sidebar", {
 });
 map.addControl(sidebar);
 
+// ===================== CLICK HANDLER ===================== //
+
 geojsonLayer.on("click", function (e) {
   if (e.layer.feature && e.layer.feature.properties.nombre) {
     console.log(e.layer.feature.properties.nombre);
@@ -29,6 +31,9 @@ geojsonLayer.on("click", function (e) {
       <p>${e.layer.feature.properties.descripcion}</p>`);
   }
 });
+
+
+// ===================== SIDEBAR FUNCTIONS ===================== //
 
 map.on("click", function () {
   sidebar.hide();

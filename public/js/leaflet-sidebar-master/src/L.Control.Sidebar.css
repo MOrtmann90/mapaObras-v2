@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
+
 .leaflet-sidebar {
   position: absolute;
   height: 100%;
@@ -111,15 +113,14 @@
 }
 .leaflet-sidebar .close {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 0px;
+  top: 14px;
   width: 31px;
   height: 31px;
   color: #333;
   font-size: 25px;
   line-height: 1em;
   text-align: center;
-  background: white;
   -webkit-border-radius: 16px;
   border-radius: 16px;
   cursor: pointer;
@@ -146,4 +147,26 @@
 
 .spacebar {
   margin-block: 1rem;
+}
+
+h2 {
+  font-family: "Gabarito";
+  font-weight: 700;
+  margin-block: 0.5rem;
+}
+
+.icon-circle {
+  background-color: #fff;
+  width: 1.8rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+.icon-circle i {
+  font-size: 1rem;
+  color: #262626;
 }
