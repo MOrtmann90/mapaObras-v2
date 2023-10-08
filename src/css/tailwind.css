@@ -16,6 +16,14 @@
   }
 
   .control-card {
-    @apply gap-4 p-2 ml-2 border rounded-md bg-neutral-500 border-neutral-500;
+    @apply flex items-center w-full mb-2 ml-2 border rounded-md shadow-inner cursor-pointer border-neutral-500 basis-1/6 hover:opacity-80;
+  }
+
+  .inactive-label {
+    @apply bg-neutral-700;
+  }
+
+  .input-btn-label {
+    @apply flex items-center w-full h-full pl-2 font-semibold cursor-pointer;
   }
 }

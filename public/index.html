@@ -121,7 +121,7 @@
       <span></span><span></span><span></span><span></span><span></span>
     </section>
     <!-- SIDEBAR / MAP -->
-    <section class="flex p-3 mt-6 bg-neutral-100">
+    <section class="flex p-3 mt-6 select-none bg-neutral-100">
       <div class="w-full">
         <!-- sidebar -->
         <div id="sidebar">
@@ -137,40 +137,99 @@
         ></div>
       </div>
       <!-- references -->
-      <div
-        class="items-stretch hidden grid-cols-1 text-white min-w-fit lg:grid"
-      >
-        <button class="control-card bg-[#f64740]">
-          <i class="mr-2 text-2xl fa-regular fa-hospital"></i>Salud y bienestar
-          <div>18</div>
-        </button>
-        <button class="control-card bg-[#fdca3f] text-[#262626]">
-          <i class="mr-2 text-2xl fa-solid fa-person-digging"></i
-          >Infraestructura
-          <div>18</div>
-        </button>
-        <button class="control-card bg-[#80be39]">
-          <i class="mr-2 text-2xl fa-solid fa-recycle"></i>Ambiente
-          <div>18</div>
-        </button>
-        <button class="control-card bg-[#7fb8db] text-[#262626]">
-          <i class="mr-2 text-2xl fa-solid fa-book-open-reader"></i>Educación
-          <div>18</div>
-        </button>
-        <button class="control-card bg-[#384c5b]">
-          <i class="mr-2 text-2xl fa-solid fa-user-shield"></i>Seguridad
-          <div>18</div>
-        </button>
-        <button class="control-card bg-[#a3333d]">
-          <i class="mr-2 text-2xl fa-solid fa-masks-theater"></i>Cultura
-          <div>18</div>
+      <div class="flex-col justify-between hidden text-white min-w-fit lg:flex">
+        <div class="control-card bg-[#fdca3f] text-[#262626]">
+          <input
+            type="checkbox"
+            name="Infraestructura"
+            id="infra-btn"
+            class="hidden"
+            checked
+          />
+          <label for="infra-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-solid fa-person-digging"></i
+            >Infraestructura
+          </label>
+        </div>
+
+        <div class="control-card bg-[#7fb8db] text-[#262626]">
+          <input
+            type="checkbox"
+            name="Educación"
+            id="educacion-btn"
+            class="hidden"
+            checked
+          />
+          <label for="educacion-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-solid fa-book-open-reader"></i>Educación
+          </label>
+        </div>
+
+        <div class="control-card bg-[#80be39]">
+          <input
+            type="checkbox"
+            name="Ambiente"
+            id="ambiente-btn"
+            class="hidden"
+            checked
+          /><label for="ambiente-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-solid fa-recycle"></i>Ambiente
+          </label>
+        </div>
+
+        <div class="control-card bg-[#f64740]">
+          <input
+            type="checkbox"
+            name="Salud y bienestar"
+            id="salud-btn"
+            class="hidden"
+            checked
+          />
+          <label for="salud-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-regular fa-hospital"></i>Salud y
+            bienestar</label
+          >
+        </div>
+
+        <div class="control-card bg-[#384c5b]">
+          <input
+            type="checkbox"
+            name="Seguridad"
+            id="seguridad-btn"
+            class="hidden"
+            checked
+          />
+          <label for="seguridad-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-solid fa-user-shield"></i
+            >Seguridad</label
+          >
+        </div>
+
+        <div class="control-card bg-[#a3333d]">
+          <input
+            type="checkbox"
+            name="Cultura"
+            id="cultura-btn"
+            checked
+            class="hidden"
+          /><label for="cultura-btn" class="input-btn-label"
+            ><i class="mr-2 text-2xl fa-solid fa-masks-theater"></i
+            >Cultura</label
+          >
+        </div>
+
+        <button id="reset-btn" class="mb-0 control-card">
+          <span class="mx-auto text-neutral-900"
+            ><i class="mr-2 fa-solid fa-arrow-rotate-left"></i>Restablecer
+            mapa</span
+          >
         </button>
       </div>
     </section>
     <!-- FOOTER -->
     <footer class="w-full p-4 text-center bg-neutral-800 text-slate-50">
       <div class="mb-3 text-neutral-500">
-        <i class="fa-solid fa-circle-info"></i> Este mapa se encuentra en
+        <i class="mr-2 fa-solid fa-circle-info"></i>Este mapa se encuentra en
         constante edición
       </div>
       <p>
@@ -182,12 +241,14 @@
     <!-- COUNTER ANIMATION -->
     <script src="js/counterAnimation.js"></script>
     <!-- DATA -->
-    <script src="../data/puntos_obras.js"></script>
-    <script src="../data/lineas_obras.js"></script>
+    <script src="data/puntos_obras.js"></script>
+    <script src="data/lineas_obras.js"></script>
     <!-- MAP SCRIPT -->
     <script src="js/map.js"></script>
     <!-- SIDEBAR SCRIPT -->
     <script src="js/leaflet-sidebar-master/src/L.Control.Sidebar.js"></script>
     <script src="js/sidebar.js"></script>
+    <!-- BTN FUNCTIONS -->
+    <script src="js/btnHandler.js"></script>
   </body>
 </html>

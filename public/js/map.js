@@ -2,7 +2,7 @@
 // ===================== MAP ===================== //
 // =============================================== //
 
-var map = L.map("map").setView([-37.32497, -59.13597], 13);
+var map = L.map("map").setView([-37.3156, -59.13597], 13);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -85,7 +85,7 @@ var geojsonLayer = L.geoJSON(puntosObras, {
 // ===================== LINE LAYERS ===================== //
 // ======================================================= //
 
-var lineLayer = L.geoJSON(lineasObras, {color: '#FDCA3F', weight: 5})
+var lineLayer = L.geoJSON(lineasObras, {color: '#000', weight: 5})
 
 
 // =================================================== //
@@ -99,6 +99,8 @@ var culturaFiltradaLayer = L.layerGroup();
 var ambienteFiltradaLayer = L.layerGroup();
 var educacionFiltradaLayer = L.layerGroup();
 var saludFiltradaLayer = L.layerGroup();
+
+
 
 // Iterar sobre la capa geojsonLayer y agregar marcadores a las capas filtradas
 geojsonLayer.eachLayer(function (marker) {
