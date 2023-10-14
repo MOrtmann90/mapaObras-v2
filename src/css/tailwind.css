@@ -4,7 +4,7 @@
 
 @layer components {
   .card-container {
-    @apply flex flex-col px-1 text-center backdrop-filter-none backdrop-blur-none;
+    @apply flex flex-col px-1 text-center backdrop-filter-none backdrop-blur-none lg:h-40 lg:w-full;
   }
 
   .counter {
@@ -17,10 +17,6 @@
 
   .control-card {
     @apply flex items-center w-full mb-2 ml-2 border rounded-md shadow-inner cursor-pointer border-neutral-500 basis-1/6 hover:opacity-80;
-  }
-
-  .inactive-label {
-    @apply bg-neutral-700;
   }
 
   .input-btn-label {

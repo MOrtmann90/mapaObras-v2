@@ -34,7 +34,7 @@ buttons.forEach((button) => {
       console.log(`${button.name}: La capa ha sido agregada`);
       map.addLayer(mapLayer);
       button.parentElement.style.opacity = 1;
-    }
+     }
   });
 });
 
@@ -52,9 +52,7 @@ resetBtn.addEventListener("click", () => {
     educacionFiltradaLayer.addTo(map);
     saludFiltradaLayer.addTo(map);
     map.setView([-37.3156, -59.13597], 13);
-    // Restaurar la opacidad a 100% cuando se restablece el mapa
+    // Reset opacity when map is restablished
     button.parentElement.style.opacity = 1;
   });
 });
-
-// Label style

@@ -142,7 +142,7 @@
 }
 
 .datos-obras-subs {
-  color: rgb(77, 77, 77);
+  color: #D06D33;
 }
 
 .spacebar {
@@ -151,6 +151,7 @@
 
 h2 {
   font-family: "Gabarito";
+  color: #D06D33;
   font-weight: 700;
   margin-block: 0.5rem;
 }
@@ -170,3 +171,4 @@ h2 {
   font-size: 1rem;
   color: #262626;
 }
+

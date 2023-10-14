@@ -530,6 +530,13 @@ video {
   -webkit-backdrop-filter: none;
           backdrop-filter: none;
 }
+@media (min-width: 1024px) {
+
+  .card-container {
+    height: 10rem;
+    width: 100%;
+  }
+}
 .counter {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -806,5 +813,9 @@ video {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:max-w-6xl {
+    max-width: 72rem;
   }
 }

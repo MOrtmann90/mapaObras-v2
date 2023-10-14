@@ -15,7 +15,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // ======================================================== //
 
 // Crear una capa GeoJSON
-var geojsonLayer = L.geoJSON(puntosObras, {
+var pointsLayer = L.geoJSON(puntosObras, {
   pointToLayer: function (feature, latlng) {
     var categoria = feature.properties.tipo;
     var iconName;
@@ -85,7 +85,7 @@ var geojsonLayer = L.geoJSON(puntosObras, {
 // ===================== LINE LAYERS ===================== //
 // ======================================================= //
 
-var lineLayer = L.geoJSON(lineasObras, {color: '#000', weight: 5})
+var linesLayer = L.geoJSON(lineasObras, {color: '#000', weight: 5})
 
 
 // =================================================== //
@@ -103,13 +103,13 @@ var saludFiltradaLayer = L.layerGroup();
 
 
 // Iterar sobre la capa geojsonLayer y agregar marcadores a las capas filtradas
-geojsonLayer.eachLayer(function (marker) {
+pointsLayer.eachLayer(function (marker) {
   var categoria = marker.feature.properties.tipo;
 
   // Filtrar por categoría y agregar a la capa correspondiente
   if (categoria === "Infraestructura") {
     infraestructuraFiltradaLayer.addLayer(marker);
-    infraestructuraFiltradaLayer.addLayer(lineLayer);
+    infraestructuraFiltradaLayer.addLayer(linesLayer);
       } else if (categoria === "Seguridad") {
     seguridadFiltradaLayer.addLayer(marker);
   } else if (categoria === "Cultura") {
